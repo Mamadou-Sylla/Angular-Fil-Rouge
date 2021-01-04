@@ -1,0 +1,54 @@
+.dropdown-item
+{
+    background-color: darkcyan;
+    color: white;
+    font-size: 20px;
+    font-family: 'Salma';
+}
+.dropdown-item:hover
+{
+    background-color: rgb(245, 134, 30);
+}
+nav {
+    height: 100px;
+    background-color: darkcyan;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+#navbarSupportedContent{
+    margin-left: 50px !important;
+}
+ul>li>a{
+    color: white;
+    font-size: 15px;
+    font-family: 'Salma';
+}
+ul>li>a:hover{
+    color: white;
+    background-color: rgb(245, 134, 30);
+}
+.icon{
+    margin-left: 100px;
+}
+.icon>.icon-li>.icon-a:hover{
+    color:none;
+    background-color: darkcyan;
+}
+
+
+
+  @media  (max-width: 767.98px){
+    ul{
+        background-color: rgb(2, 107, 107);  
+        width: 100% !important; 
+        height: 100%;
+     }
+     #navbarSupportedContent{
+         
+         background-size: 100% !important;
+         position:relative;
+     }
+          
+  }

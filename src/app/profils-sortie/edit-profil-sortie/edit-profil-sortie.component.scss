@@ -1,0 +1,35 @@
+.annuler
+{
+ margin-left: 252px;
+}
+.envoyer
+{
+   background-color: darkcyan;
+  font-family: 'Salma';
+  font-size: 20px;
+  color: white;
+  width: 100% !important;
+}
+.item
+{
+  width: 60% !important;
+  background-color: white;
+  padding: 50px;
+  margin-top: 5em !important;
+  margin-left: 20% !important;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-group
+{
+  max-width: 100% !important;
+}
+h1
+{
+  text-align: center;
+  font-family: Salsa;
+  font-size: 30px;
+  color: #34936e;
+  font-weight: bold;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V15</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<script src="../../assets/js/auth.script.js"></script>
+
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<div class="contact100-form-title">
+				<span class="contact100-form-title-1">
+					Authentification
+				</span>
+
+				<span class="contact100-form-title-2">
+					Entrer votre login et mot de passe
+				</span>
+			</div>
+
+			<form class="contact100-form validate-form" method="post" (ngSubmit)="OnSubmit(loginForm)" #loginForm="ngForm">
+				<div class=" form-group w-100">
+					<label class="form-label  h5">Email</label>
+					<input class="input100" type="text" name="email" placeholder="Entrer votre adresse email" ngModel required email #myEmail="ngModel">
+					<small class="text-danger" *ngIf="!myEmail.valid && myEmail.dirty">Email invalide</small>
+				</div>
+				<div class=" form-group w-100">
+					<label class="form-label  h5 pt-4">Password</label>
+					<input class="input100" type="password" name="password" placeholder="Entrer votre password" ngModel required password #myPwd="ngModel">
+					<small class="text-danger" *ngIf="!myPwd.valid && myPwd.dirty">Email invalide</small>
+				</div>
+				<div class="container-contact100-form-btn pt-4">
+					<button class="contact100-form-btn">
+						<span>
+							Envoyer
+							<i class="fa fa-long-arrow-right  m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
