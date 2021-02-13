@@ -16,6 +16,7 @@ import { GroupeCompetenceComponent } from './groupe-competence/groupe-competence
 import { ListGroupeCompetenceComponent } from './groupe-competence/list-groupe-competence/list-groupe-competence.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LogoutComponent } from './logout/logout.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { AddProfilComponent } from './profil/add-profil/add-profil.component';
 import { EditProfilComponent } from './profil/edit-profil/edit-profil.component';
 import { ListProfilComponent } from './profil/list-profil/list-profil.component';
@@ -56,7 +57,7 @@ const routes: Routes = [
           component: ProfilComponent,
           children: [
             {
-              path: 'edit',
+              path: 'edit/:id',
               component: EditProfilComponent
             }
           ]
@@ -74,7 +75,7 @@ const routes: Routes = [
           component: AddUsersComponent
         },
         {
-          path: 'users/list/edit-user',
+          path: 'users/list/edit-user/:id',
           component: EditUsersComponent
         },
         {
@@ -90,7 +91,7 @@ const routes: Routes = [
           component: ProfilsSortieComponent,
           children: [
             {
-              path: 'edit',
+              path: 'edit/:id',
             component: EditProfilSortieComponent
             }
           ]
@@ -112,7 +113,7 @@ const routes: Routes = [
               component: ListCompetenceComponent
               },
               {
-                path: 'edit',
+                path: 'edit/:id',
               component: EditCompetenceComponent
               }
           ]
@@ -130,7 +131,7 @@ const routes: Routes = [
         component: ListGroupeCompetenceComponent
         },
         {
-          path: 'grpecompetence/edit',
+          path: 'grpecompetence/edit/:id',
         component: EditGroupeCompetenceComponent
         },
         {
@@ -166,8 +167,12 @@ const routes: Routes = [
         component: ListReferentielComponent
         },
         {
-          path: 'referentiel/edit',
+          path: 'referentiel/:id',
         component: EditReferentielComponent
+        },
+        {
+          path: '**',
+        component: NotFoundComponent
         }
     ]
  }

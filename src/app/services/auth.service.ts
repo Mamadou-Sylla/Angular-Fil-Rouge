@@ -50,8 +50,8 @@ getToken(credentials: any): any{
 
 
 myToken(): any {
-  
-  console.log(localStorage.getItem('token'));
+
+  // console.log(localStorage.getItem('token'));
 
   return localStorage.getItem('token');
 }

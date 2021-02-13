@@ -4,12 +4,12 @@
       <h1>AJOUTER UN PROFIL</h1>
     </div>
     <!--<form #f="ngForm" name="userPost" (ngSubmit)="onSubmit()">-->
-    <form  name="userPost">
+    <form method="post" (ngSubmit)="OnSubmit(FormProfil)" #FormProfil="ngForm" name="FormProfil">
           <div class=" form-group  col-md-6 col-sm-6 col-xs-12">
               <label for="inputLibelle">Libellé</label>
-              <input type="text" class="form-control" id="inputLibelle" placeholder="Admin" matInput name="libelle"  required>
-              <!--<mat-error *ngIf="emailFormControl.hasError('required')">Prénom est <strong>obligatoire</strong></mat-error>-->
-          </div>
+              <input type="text" class="form-control" id="inputLibelle" placeholder="Libelle"  name="libelle"   ngModel required email #myLibelle="ngModel">
+              <small class="text-danger" *ngIf="!myLibelle.valid && !myLibelle.dirty">Libelle obligatoire</small>
+            </div>
          <div class="form-group col-md-6 col-sm-6 col-xs-12">
                <input type="submit" name="envoyer" class="form-control btn btn-outline-success mt-5 envoyer" value="ENVOYER">
          </div>

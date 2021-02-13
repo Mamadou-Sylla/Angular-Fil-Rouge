@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="row"> 
+<div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12">
         <form class="form-inline">
             <input class="form-control ml-3 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -32,65 +32,18 @@
                 <tr>
                     <th>#</th>
                     <th>Libellé</th>
-                    <th></th>
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor=" let element of profil">
                 <tr>
-                    <td>1</td>
-                    <td>ADMIN</td>
-                    <td></td>
+                    <td>{{ element.id}}</td>
+                    <td>{{ element.libelle}}</td>
                     <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>         
+                        <button class=" btn btn-outline-warning" routerLink="edit/{{element.id}}">  <i class="material-icons" (click)="EditProfil(element)">edit</i></button>
+                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons" c>delete</i></button>
+                    </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>ADMIN</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>ADMIN</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>           
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>ADMIN</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>ADMIN</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>ADMIN</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>      
             </tbody>
             <tfoot>
                 <tr>

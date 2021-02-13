@@ -1,1 +1,46 @@
-<p>edit-users works!</p>
+<script src="../src/assets/js/script.js"></script>
+<div class="item justify-content-center bg-light shadow p-3 mb-5 bg-white rounded">
+    <div class="title">
+      <h1>MODIFIER UN UTILISATEUR</h1>
+    </div>
+    <!--<form #f="ngForm" name="userPost" (ngSubmit)="onSubmit()">-->
+    <form (ngSubmit)='OnUpdate(userPost)' #userPost="ngForm">
+          <div class=" form-group  col-md-6">
+              <label for="inputPrenom">Prénom</label>
+              <input type="text" class="form-control" id="inputPrenom" placeholder="Tyson" name="prenom" [(ngModel)]="data.firstname" required  #myFname="ngModel">
+            </div>
+          <div class="form-group col-md-6">
+              <label for="inputNom">Nom</label>
+              <input type="text" class="form-control" id="inputNom" placeholder="Mike" name="nom" [(ngModel)]="data.lastname" required #myLname="ngModel">
+          </div>
+          <div class="form-group col-md-6">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="miketyson@gmail.com" name="email"  [(ngModel)]="data.email" required #myEmail="ngModel">
+          </div>
+          <div class="form-group col-md-6">
+                <label for="inputPwd">Etat</label>
+                <input type="text" class="form-control" id="inputPwd" placeholder="Password" name="password" [(ngModel)]="data.etat" required #myPassword="ngModel">
+          </div>
+          <div class="form-group col-md-6">
+                <label for="inputPhone">Téléphone</label>
+                <input type="text" class="form-control" id="inputPhone" placeholder="+221 77 777 77 77" name="telephone" [(ngModel)]="data.telephone" required #myPhone="ngModel">
+          </div>
+          <div class="form-group">
+            <!--<select class="custom-select" name="profil" ngModel #myProfil="ngModel" required>-->
+                  <label for="inputPhone">Profil</label>
+            <!--<input type="text" class="form-control" id="inputprofil" name="profil" [(ngModel)]="data.profil.libelle" required #myProfil="ngModel">-->
+            <input type="text" class="form-control" id="inputprofil" name="profil" [(ngModel)]="data.profil" required #myProfil="ngModel">
+            <!--<small class="text-danger" *ngIf="!myProfil.valid && myProfil.dirty">Invalid profil</small>-->
+          </div>
+         <div class="form-group w-100 col-md-6">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="customFile">Avatar</label>
+                    <input type="file" class="custom-file-input" id="customFile" name="avatar">
+                </div>
+         </div>
+         <div class="form-group col-md-6">
+               <input type="submit" name="envoyer" class="form-control btn btn-outline-success mt-5 envoyer" value="MODIFIER">
+         </div>
+    </form>
+</div>
+

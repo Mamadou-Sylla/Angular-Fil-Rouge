@@ -9,17 +9,17 @@
         <div class="card-body">
             <h5 class="card-title">ADMIN</h5>
             <button type="button" class="btn btn-success w-100 mb-4 mt-2">
-                Actif <span class="badge badge-light">9</span>
+                Actif <span class="badge badge-light">4</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-warning w-100  mb-4 mt-4">
-                Inactif <span class="badge badge-light">9</span>
+                Inactif <span class="badge badge-light">0</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-primary w-100  mt-4">
-                Total <span class="badge badge-light">9</span>
+                Total <span class="badge badge-light">7</span>
                 <span class="sr-only">unread messages</span>
             </button>
         </div>
@@ -28,17 +28,17 @@
         <div class="card-body">
             <h5 class="card-title">CM</h5>
             <button type="button" class="btn btn-success w-100 mb-4 mt-2">
-                Actif <span class="badge badge-light">9</span>
+                Actif <span class="badge badge-light">4</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-warning w-100  mb-4 mt-4">
-                Inactif <span class="badge badge-light">9</span>
+                Inactif <span class="badge badge-light">0</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-primary w-100  mt-4">
-                Total <span class="badge badge-light">9</span>
+                Total <span class="badge badge-light">4</span>
                 <span class="sr-only">unread messages</span>
             </button>
         </div>
@@ -47,17 +47,17 @@
         <div class="card-body">
             <h5 class="card-title">FORMATEUR</h5>
             <button type="button" class="btn btn-success w-100 mb-4 mt-2">
-                Actif <span class="badge badge-light">9</span>
+                Actif <span class="badge badge-light">7</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-warning w-100  mb-4 mt-4">
-                Inactif <span class="badge badge-light">9</span>
+                Inactif <span class="badge badge-light">1</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-primary w-100  mt-4">
-                Total <span class="badge badge-light">9</span>
+                Total <span class="badge badge-light">8</span>
                 <span class="sr-only">unread messages</span>
             </button>
         </div>
@@ -66,17 +66,17 @@
         <div class="card-body">
             <h5 class="card-title">APPRENANT</h5>
             <button type="button" class="btn btn-success w-100 mb-4 mt-2">
-                Actif <span class="badge badge-light">9</span>
+                Actif <span class="badge badge-light">4</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-warning w-100  mb-4 mt-4">
-                Inactif <span class="badge badge-light">9</span>
+                Inactif <span class="badge badge-light">0</span>
                 <span class="sr-only">unread messages</span>
             </button>
             <li class="divider"></li>
             <button type="button" class="btn btn-primary w-100  mt-4">
-                Total <span class="badge badge-light">9</span>
+                Total <span class="badge badge-light">4</span>
                 <span class="sr-only">unread messages</span>
             </button>
         </div>
@@ -97,12 +97,11 @@
             <th>Email</th>
             <th>Téléphone</th>
             <th>Etat</th>
-            <th>Start date</th>
             <th>Action</th>
         </tr>
     </thead>
-    <tbody id="myTable">
-        <tr *ngFor="let users of user">
+    <tbody id="myTable" *ngFor="let users of user">
+        <tr *ngIf="users.etat == false">
             <td> {{users.id}}</td>
             <td>{{users.firstname}}</td>
             <td>{{users.lastname}}</td>
@@ -110,7 +109,7 @@
             <td>{{users.telephone}}</td>
             <td>{{users.etat}}</td>
             <td>
-                <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditUser()">edit</i></button>
+                <button class=" btn btn-outline-warning" routerLink="edit-user/{{users.id}}">  <i class="material-icons" (click)="EditUser(users)">edit</i></button>
                 <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
 
             </td>    

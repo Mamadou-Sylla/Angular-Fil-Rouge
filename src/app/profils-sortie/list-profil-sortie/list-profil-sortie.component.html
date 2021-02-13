@@ -30,65 +30,18 @@
                 <tr>
                     <th>#</th>
                     <th>Libellé</th>
-                    <th></th>
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor=" let element of profil">
                 <tr>
-                    <td>1</td>
-                    <td>Développeur Front</td>
-                    <td></td>
+                    <td>{{ element.id}}</td>
+                    <td>{{ element.libelle}}</td>
                     <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons" (click)="RemoveProfil()">delete</i></button>
+                        <button class=" btn btn-outline-warning" routerLink="edit/{{element.id}}">  <i class="material-icons" (click)="EditProfil(element)">edit</i></button>
+                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons" (click)="OnDelete(element.id)">delete</i></button>
                     </td>         
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Développeur Back</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Community manager</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>           
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>ADMIN</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Intégrateur</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Data scientist</td>
-                    <td></td>
-                    <td>
-                        <button class=" btn btn-outline-warning" routerLink="edit-user">  <i class="material-icons" (click)="EditProfil()">edit</i></button>
-                        <button class=" btn btn-outline-danger ml-2">  <i class="material-icons">delete</i></button>
-                    </td>          
-                </tr>      
+                </tr>   
             </tbody>
             <tfoot>
                 <tr>

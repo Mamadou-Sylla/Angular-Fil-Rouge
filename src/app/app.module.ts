@@ -43,7 +43,21 @@ import { AddReferentielComponent } from './referentiel/add-referentiel/add-refer
 import { ListReferentielComponent } from './referentiel/list-referentiel/list-referentiel.component';
 import { EditReferentielComponent } from './referentiel/edit-referentiel/edit-referentiel.component';
 import { InterceptorService } from './services/interceptor.service';
+import { CommonModule } from '@angular/common';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
 // import { InterceptorService } from './services/interceptor.service';
+// import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+// import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+// import {NgAutoCompleteModule} from 'ng-auto-complete';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+
+
+
+
+
+
 
 
 @NgModule({
@@ -83,14 +97,20 @@ import { InterceptorService } from './services/interceptor.service';
     ReferentielComponent,
     AddReferentielComponent,
     ListReferentielComponent,
-    EditReferentielComponent
+    EditReferentielComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule
+    // AutocompleteLibModule,
+    // NgAutoCompleteModule
+    // AngularMultiSelectModule
   ],
 
   providers: [

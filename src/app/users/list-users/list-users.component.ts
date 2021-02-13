@@ -1,7 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from 'src/app/models/users.model';
+import { User, UserModel } from 'src/app/models/users.model';
 import { UserService } from 'src/app/services/user.service';
 // import { UsersService } from 'src/app/services/users.service';
 
@@ -25,14 +25,14 @@ export class ListUsersComponent implements OnInit {
     this.userService.getAll().subscribe(
       (res: any) => {
       this.user = res;
-      console.log(this.user);
+      // console.log(this.user);
       });
     }
 
 
 
-  EditUser(): any{
-    alert('voulez vous modifier cette users');
+  EditUser(user: User): any{
+    console.log(user);
   }
 
 }

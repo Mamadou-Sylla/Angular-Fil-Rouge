@@ -18,7 +18,22 @@ h5
     font-family: 'Salma';
     font-size: 25px;
 }
-a{
+#edit
+{
     text-decoration: white !important;
     color: white !important;
+}
+#link
+{
+    text-decoration: white !important;
+    background-color: white !important;
+    color: black;
+}
+#link:active
+{
+    color: black;
+}
+.action
+{
+    margin-top: -60px !important;
 }
