@@ -10,7 +10,7 @@ export class GroupeCompetenceService {
 
   constructor(private http: HttpClient) { }
 
-  Profil: GrpCompetence[] = [];
+  GrpComp: GrpCompetence[] = [];
   private url = 'http://127.0.0.1:8000/api/admins/grpcompetences';
 
   getAll(): Observable<GrpCompetence[]>
@@ -23,9 +23,9 @@ export class GroupeCompetenceService {
     return this.http.get<[]>(this.url + '/' + id);
   }
 
-  create(profil: { libelle: string }): any
+  create(GrpComp: any): any
   {
-    return this.http.post<GrpCompetence[]>(this.url, profil, {responseType: 'text' as 'json'});
+    return this.http.post<GrpCompetence[]>(this.url, GrpComp, {responseType: 'text' as 'json'});
   }
 
   update(profil: GrpCompetence, id: string): any

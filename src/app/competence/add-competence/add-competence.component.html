@@ -1,5 +1,5 @@
 <div class="container p-5 mt-5 w-30 ">
-    <form class="form-group">
+    <form class="form-group" (ngSubmit)='OnSubmit(cPost)' #cPost="ngForm">
         <div class="form-group">
             <label class="form-label"> Groupe de Compétence</label>
             <select class="form-select" aria-label="disabled select example">
@@ -11,7 +11,8 @@
         </div>  
         <div class="form-group mt-5">
             <label for="exampleFormControlInput1" class="form-label">Libellé</label>
-            <input class="form-control control" type="text" placeholder="Créer une base de données">
+            <input class="form-control control" type="text" placeholder="Créer une base de données" name="libelle" ngModel required #myLibelle="ngModel">
+            <small class="text-danger" *ngIf="!myLibelle.valid && myLibelle.dirty">Invalid libelle</small>
         </div>
         <div class="w-100 h-100 mt-5">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -28,44 +29,71 @@
              <div class="tab-content mt-3" id="pills-tabContent">
                <div class=" tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                  <div class="row">
+                    <div class="form-group mt-2">
+                      <label for="exampleFormControlInput1" class="form-label">Libellé</label>
+                      <input class="form-control control" type="text" placeholder="Libelle niveau 1" name="libelle1" ngModel required #Niveau1="ngModel">
+                      <small class="text-danger" *ngIf="!Niveau1.valid && Niveau1.dirty">Invalid libelle</small>
+                    </div>
                    <div class="col-md-6 col-sm-6 col-xs-12 p-2 " id="niveau">
                      <h3> Groupe d'action à réaliser 1</h3>
-                     <textarea class="form-control" placeholder="A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné..." id="floatingTextarea2" style="height: 100px"></textarea>
-                   </div>
+                     <textarea class="form-control" placeholder="A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné..."
+                      id="floatingTextarea2" style="height: 100px" name="groupeAction1" ngModel required #myGrpAction1="ngModel"></textarea>
+                     <small class="text-danger" *ngIf="!myGrpAction1.valid && myGrpAction1.dirty">Invalid Groupe action</small>
+                    </div>
                    <div class="col-md-5 col-sm-5 col-xs-12 p-2 ml-2" id="niveau">
                      <h3> Critére d'évaluation 1</h3>
-                     <textarea class="form-control" placeholder="La BD est créée à l'aide d'un script sans erreur et les données sont insérées à l'aide d'un script sans erreur..." id="floatingTextarea2" style="height: 100px"></textarea>
-                   </div>
+                     <textarea class="form-control" placeholder="La BD est créée à l'aide d'un script sans erreur et les données sont insérées à l'aide d'un script sans erreur..." 
+                     id="floatingTextarea2" style="height: 100px" name="critereEvalution1" ngModel required #CritEval="ngModel"></textarea>
+                     <small class="text-danger" *ngIf="!CritEval.valid && CritEval.dirty">Invalid Critere Evaluation</small>
+                    </div>
                  </div>
                </div>
                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                  <div class="row">
+                  <div class="form-group mt-2">
+                    <label for="exampleFormControlInput1" class="form-label">Libellé</label>
+                    <input class="form-control control" type="text" placeholder="Libelle niveau 2" name="libelle2" ngModel required #Niveau2="ngModel">
+                    <small class="text-danger" *ngIf="!Niveau2.valid && Niveau2.dirty">Invalid libelle</small>
+                  </div>
                    <div class="col-md-6 col-sm-6 col-xs-12 p-2 " id="niveau">
                      <h3> Groupe d'action à réaliser 2</h3>
-                     <textarea class="form-control" placeholder="A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné..." id="floatingTextarea2" style="height: 100px"></textarea>
+                     <textarea class="form-control" placeholder="A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné..." 
+                     id="floatingTextarea2" style="height: 100px" name="groupeAction2" ngModel required #myGrpAction1="ngModel"></textarea>
+                     <small class="text-danger" *ngIf="!myGrpAction1.valid && myGrpAction1.dirty">Invalid Groupe action</small>
                    </div>
                    <div class="col-md-5 col-sm-5 col-xs-12 p-2 ml-3" id="niveau">
                      <h3> Critére d'évaluation 2</h3>
-                     <textarea class="form-control" placeholder="La BD est créée à l'aide d'un script sans erreur et les données sont insérées à l'aide d'un script sans erreur..." id="floatingTextarea2" style="height: 100px"></textarea>
+                     <textarea class="form-control" placeholder="La BD est créée à l'aide d'un script sans erreur et les données sont insérées à l'aide d'un script sans erreur..." 
+                     id="floatingTextarea2" style="height: 100px" name="critereEvalution2" ngModel required #CritEval="ngModel"></textarea>
+                     <small class="text-danger" *ngIf="!CritEval.valid && CritEval.dirty">Invalid Critere Evaluation</small>
                    </div>
                  </div>
                </div>
                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                  <div class="row">
+                    <div class="form-group mt-2">
+                      <label for="exampleFormControlInput1" class="form-label">Libellé</label>
+                      <input class="form-control control" type="text" placeholder="Libelle niveau 3" name="libelle3" ngModel required #Niveau3="ngModel">
+                      <small class="text-danger" *ngIf="!Niveau3.valid && Niveau3.dirty">Invalid libelle</small>
+                    </div>
                    <div class="col-md-6 col-sm-6 col-xs-12 p-2 " id="niveau">
                      <h3> Groupe d'action à réaliser 3</h3>
-                     <textarea class="form-control" placeholder="A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné..." id="floatingTextarea2" style="height: 100px"></textarea>
+                     <textarea class="form-control" placeholder="A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné..." 
+                     id="floatingTextarea2" style="height: 100px" name="groupeAction3" ngModel required #myGrpAction1="ngModel"></textarea>
+                     <small class="text-danger" *ngIf="!myGrpAction1.valid && myGrpAction1.dirty">Invalid Groupe action</small>
                    </div>
                    <div class="col-md-5 col-sm-5 col-xs-12 p-2 ml-3" id="niveau">
                      <h3> Critére d'évaluation 3</h3>
-                     <textarea class="form-control" placeholder="La BD est créée à l'aide d'un script sans erreur et les données sont insérées à l'aide d'un script sans erreur..." id="floatingTextarea2" style="height: 100px"></textarea>
+                     <textarea class="form-control" placeholder="La BD est créée à l'aide d'un script sans erreur et les données sont insérées à l'aide d'un script sans erreur..." 
+                     id="floatingTextarea2" style="height: 100px" name="critereEvalution3" ngModel required #CritEval="ngModel"></textarea>
+                     <small class="text-danger" *ngIf="!CritEval.valid && CritEval.dirty">Invalid Critere Evaluation</small>
                    </div>
                  </div>
                </div>
              </div>
        </div>
        <div class="text-center mt-3">
-        <button type="button" class="btn btn-outline-success btn-lg">Enrégistrer</button>
+        <button type="submit" class="btn btn-outline-success btn-lg">Enrégistrer</button>
        </div>
     </form>
 </div>

@@ -6,30 +6,13 @@
         <div class="form-group item-left">
             <div class="form-group">
                 <select class="form-select" aria-label="disabled select example">
-                    <option selected>Développer le front d'une application</option>
-                    <option value="1">Développer le back d'une application</option>
-                    <option value="2">Administrateur base de données</option>
-                    <option value="3">Community manager</option>
+                        <option *ngFor="let element of grpcomp" [ngValue]="element">{{element.libelle}}</option>
+               
                 </select>
             </div>  
             <div class="overflow-auto scroll">
                   <div class="list-group" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="" role="tab" aria-controls="home" [routerLink]="['list']">Maquetter une application</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="" role="tab" aria-controls="profile" routerLink='list'>Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="" role="tab" aria-controls="messages" [routerLink]="['list']">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="" role="tab" aria-controls="settings" [routerLink]="['list']">Réaliser une interface web responsive</a>
-                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="" role="tab" aria-controls="home">Maquetter une application</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="" role="tab" aria-controls="profile">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="" role="tab" aria-controls="messages">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="" role="tab" aria-controls="settings">Réaliser une interface web responsive</a>
-                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="" role="tab" aria-controls="home">Maquetter une application</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="" role="tab" aria-controls="profile">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="" role="tab" aria-controls="messages">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="" role="tab" aria-controls="settings">Réaliser une interface web responsive</a>
-                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="" role="tab" aria-controls="home">Maquetter une application</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="" role="tab" aria-controls="profile">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="" role="tab" aria-controls="messages">Développer une interface web dynamique</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="" role="tab" aria-controls="settings">Réaliser une interface web responsive</a>
+                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="" role="tab" aria-controls="home" [routerLink]="['list']" *ngFor="let comp of grpcomp.competence">{{comp.libelle}}</a>
                  </div>        
         </div>
     </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GrpCompetence } from '../models/groupe-competence.model';
+import { GroupeCompetenceService } from '../services/groupe-competence.service';
 
 @Component({
   selector: 'app-competence',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompetenceComponent implements OnInit {
 
-  constructor() { }
+  grpcomp: GrpCompetence[] | any;
 
-  ngOnInit(): void {
+  constructor(private service: GroupeCompetenceService, private router: Router) { }
+
+  ngOnInit(): any {
+    this.service.getAll().subscribe(
+      res => {
+        this.grpcomp = res;
+        console.log(this.grpcomp);
+      });
   }
 
 }

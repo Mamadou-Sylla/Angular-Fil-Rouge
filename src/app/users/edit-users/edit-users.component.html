@@ -29,7 +29,7 @@
             <!--<select class="custom-select" name="profil" ngModel #myProfil="ngModel" required>-->
                   <label for="inputPhone">Profil</label>
             <!--<input type="text" class="form-control" id="inputprofil" name="profil" [(ngModel)]="data.profil.libelle" required #myProfil="ngModel">-->
-            <input type="text" class="form-control" id="inputprofil" name="profil" [(ngModel)]="data.profil" required #myProfil="ngModel">
+            <input type="text" class="form-control" id="inputprofil" *ngFor="let prf of data.profil" name="profil" [(ngModel)]="prf.libelle" required #myProfil="ngModel">
             <!--<small class="text-danger" *ngIf="!myProfil.valid && myProfil.dirty">Invalid profil</small>-->
           </div>
          <div class="form-group w-100 col-md-6">

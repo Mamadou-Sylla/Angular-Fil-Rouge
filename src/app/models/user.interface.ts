@@ -20,6 +20,10 @@ export interface Etudiant{
     telephone: string;
     password: string;
     etat: boolean;
-    profil: string;
+    profil: [
+      {
+        libelle: string;
+      }
+    ];
     libelle: string;
   }

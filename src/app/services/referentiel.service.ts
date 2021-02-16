@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ReferentielModel } from '../models/referentiel.model';
+import { Referentiel } from '../models/referentiel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,32 +10,33 @@ export class ReferentielService {
 
   constructor(private http: HttpClient) { }
 
-  Profil: ReferentielModel[] = [];
+  referentiel: Referentiel[] = [];
+
   private url = 'http://127.0.0.1:8000/api/admins/referentiels';
 
-  getAll(): Observable<ReferentielModel[]>
+  getAll(): Observable<Referentiel[]>
   {
-    return this.http.get<[ReferentielModel]>(this.url);
+    return this.http.get<Referentiel[]>(this.url);
   }
 
   get(id: string): any
   {
-    return this.http.get<[ReferentielModel]>(this.url + '/' + id);
+    return this.http.get<Referentiel[]>(this.url + '/' + id);
   }
 
   create(profil: { libelle: string }): any
   {
-    return this.http.post<ReferentielModel[]>(this.url, profil, {responseType: 'text' as 'json'});
+    return this.http.post<Referentiel[]>(this.url, profil, {responseType: 'text' as 'json'});
   }
 
-  update(profil: ReferentielModel, id: string): any
+  update(referentiel: Referentiel, id: string): any
   {
-    return this.http.put<ReferentielModel[]>(this.url + '/' + id, profil);
+    return this.http.put<Referentiel[]>(this.url + '/' + id, referentiel);
   }
 
   delete(id: string): any
   {
-    return this.http.delete<ReferentielModel[]>(this.url + '/' + id);
+    return this.http.delete<Referentiel[]>(this.url + '/' + id);
   }
 
 }

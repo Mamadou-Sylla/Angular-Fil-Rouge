@@ -23,7 +23,7 @@ export class ListReferentielComponent implements OnInit {
       });
   }
 // tslint:disable-next-line:typedef
-  EditProfil(referentiel: Referentiel){
+  Edit(referentiel: Referentiel){
     console.log(referentiel);
   }
 

@@ -45,6 +45,8 @@ export interface User{
   etat: boolean;
   token: string;
   password: string;
-  profil: string;
+  profil: [{
+    libelle: string;
+  }];
   avatar: Blob;
  }

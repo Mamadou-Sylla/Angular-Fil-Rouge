@@ -10,7 +10,7 @@ export class CompetenceService {
 
   constructor(private http: HttpClient) { }
 
-  Profil: Competence[] = [];
+  Competences: Competence[] = [];
   private url = 'http://127.0.0.1:8000/api/admin/competences';
 
   getAll(): Observable<Competence[]>
@@ -23,9 +23,9 @@ export class CompetenceService {
     return this.http.get<[]>(this.url + '/' + id);
   }
 
-  create(profil: { libelle: string }): any
+  create(Competences: any): any
   {
-    return this.http.post<Competence[]>(this.url, profil, {responseType: 'text' as 'json'});
+    return this.http.post<Competence[]>(this.url, Competences, {responseType: 'text' as 'json'});
   }
 
   update(profil: Competence, id: string): any

@@ -18,7 +18,6 @@ export class EditUsersComponent implements OnInit {
   isUpdate = false;
   constructor(private services: UserService, private route: ActivatedRoute, private http: HttpClient) { }
   userId: number | any;
-
   data: Etudiant = {
     firstname: '',
     lastname: '',
@@ -26,7 +25,9 @@ export class EditUsersComponent implements OnInit {
     telephone: '',
     etat: false,
     password: '',
-    profil: '',
+    profil: [{
+      libelle: ''
+    }],
     libelle: ''
     };
 
@@ -40,7 +41,8 @@ export class EditUsersComponent implements OnInit {
       (res: any) => {
         // console.log(res);
         this.data = res;
-        console.log(this.data);
+        console.log(this.data.profil);
+        // tslint:disable-next-line:prefer-for-of
       }
     );
   }
