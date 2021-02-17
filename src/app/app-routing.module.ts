@@ -107,16 +107,14 @@ const routes: Routes = [
         {
           path: 'competence',
           component: CompetenceComponent,
-          children: [
-              {
-                path: 'list',
-              component: ListCompetenceComponent
-              },
-              {
-                path: 'edit/:id',
-              component: EditCompetenceComponent
-              }
-          ]
+        },
+        {
+          path: 'competence/list',
+        component: ListCompetenceComponent
+        },
+        {
+          path: 'competence/edit/:id',
+        component: EditCompetenceComponent
         },
         {
           path: 'competence/add',

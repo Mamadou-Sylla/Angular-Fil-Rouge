@@ -23,7 +23,7 @@ export class EditGroupeCompetenceComponent implements OnInit {
   selectedItems = [];
   dropdownSettings: IDropdownSettings | any;
 
-  data: GrpCompetence[] = []
+  data: GrpCompetence[] = [];
   tmp = [];
   cpt = [];
   result = [];

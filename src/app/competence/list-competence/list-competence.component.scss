@@ -1,5 +1,49 @@
 .row
 {
+    margin-left: 3%;
+}
+
+
+.overflow-auto
+{
+    overflow-y: scroll;
+}
+.scroll
+{
+    height: 400px;
+}
+li, option{
+    font-family: 'Times new roman';
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+}
+a:active
+{
+    background-color: darkcyan !important;
+    color: white;
+}
+a:focus
+{
+    background-color: darkcyan !important;
+    color: white;
+}
+option{
+    font-size: 20px;
+}
+
+
+  @media  (max-width: 767.98px){
+    .col-xs-12{
+        margin-top: 5px !important;
+        margin-left: 0px !important;
+    }
+  }
+  
+  .row
+{
     margin-left: 4%;
 }
 
@@ -45,3 +89,33 @@ p
         margin-left: 0px !important;
     }
   }
+#button
+{
+    float: right;
+    margin-left: 20%;
+}
+.compt
+{
+    width: 80%;
+}
+.float-right
+{
+    margin-left: 82%;
+    margin-top: -7%;
+}
+.wrapper
+{
+    border-radius: 5px; 
+    background-color: rgb(236, 236, 236); 
+    width: 80%;
+    margin-left: 8% !important;
+}
+.title
+{
+  text-align: center;
+  font-family: 'Salsa';
+  font-size: 30px;
+  color: darkcyan;
+  font-weight: bold;
+  padding-top: 30px !important;
+}

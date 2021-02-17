@@ -31,7 +31,28 @@
             </ng-multiselect-dropdown>
             </div>
         </div>
-       
+        <div class="form-group mt-5">
+            <div class="competence p-3">
+                <div class="accordion col-" id="accordionExample">
+                    <div class="accordion-itemt">
+                        <h2 class="accordion-header text-center" id="headingOne">
+                            <button class="accordion-button btn btn-success  mt-2" id="competence" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                AJOUETR UNE COMPETENCE
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1" class="form-label pb-4">Libellé</label>
+                                    <input class="form-control control" type="text" placeholder="Libellé competence" ngModel
+                                     name="competences"    #myLibelleComp="ngModel">
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
        <div class="text-center mt-3">
         <button type="submit" class="btn btn-outline-success btn-lg">Enrégistrer</button>
        </div>

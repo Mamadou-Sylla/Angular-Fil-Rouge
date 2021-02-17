@@ -2,12 +2,12 @@
     <form class="form-group" (ngSubmit)='OnSubmit(cPost)' #cPost="ngForm">
         <div class="form-group">
             <label class="form-label"> Groupe de Compétence</label>
-            <select class="form-select" aria-label="disabled select example">
-                    <option selected>Développer le front d'une application</option>
-                    <option value="1">Développer le back d'une application</option>
-                    <option value="2">Administrateur base de données</option>
-                    <option value="3">Community manager</option>
-            </select>
+            <div class="form-group">
+              <select class="form-select" aria-label="disabled select example">
+                      <option *ngFor="let element of grpcomp" value="{{element.id}}" name="groupeCompetence" ngModel  #myGrpC="ngModel">{{element.libelle}}</option>
+             
+              </select>
+          </div>  
         </div>  
         <div class="form-group mt-5">
             <label for="exampleFormControlInput1" class="form-label">Libellé</label>

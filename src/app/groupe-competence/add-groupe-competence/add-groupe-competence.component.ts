@@ -20,7 +20,17 @@ export class AddGroupeCompetenceComponent implements OnInit {
   selectedItems = [];
   dropdownSettings: IDropdownSettings | any;
   tmp = [];
-  data: Competence[] | any;
+  data = {
+    libelle: '',
+    descriptif: '',
+    competence:
+    [
+      {
+        libelle: ''
+      }
+    ],
+    groupecompetence: 0
+  };
 
   constructor(private service: CompetenceService, private router: Router, private servicesGrpComp: GroupeCompetenceService) { }
 
@@ -59,7 +69,10 @@ export class AddGroupeCompetenceComponent implements OnInit {
   }
 
   OnSubmit(form: NgForm): any {
-  this.data = form.value;
+  this.data.libelle = form.value.libelle;
+  this.data.descriptif = form.value.descriptif;
+  this.data.competence = form.value.competence;
+  this.data.competence.push({libelle: form.value.competences});
   console.log(this.data);
   this.servicesGrpComp.create(this.data).subscribe(
     (res: any) => console.log(res)
